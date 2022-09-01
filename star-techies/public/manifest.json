@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Star Market",
+  "author": "Star Techies",
+  "version": "1.0.1",
+  "icons": {
+    "128": "thumbnail.png"
+  },
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "activeTab"
+  ]
+}
