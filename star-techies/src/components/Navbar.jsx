@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <div>
+    <div style={{width:"300px"}}>
         <Link to="/" >Crypto Currency</Link>
         <Link to="/sharemarket" >Share Market</Link>
     </div>
   )
 }
 
-export default Navbar
+export default Navbar;

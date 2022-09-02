@@ -1,21 +1,19 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Star Market",
   "author": "Star Techies",
   "version": "1.0.1",
   "icons": {
     "128": "thumbnail.png"
   },
-  "browser_action": {
-    "default_popup": "index.html",
-    "default_script":""
+  "action": {
+    "default_popup": "index.html"
+    
   },
   "permissions": [
-    "activeTab"
+    "scripting"
   ],
-  "background":{
-    "scripts":["index.js"],
-    "persistent":false
-  }
+  
+  "host_permissions":["https://*/","http://*/"]
 
 }
