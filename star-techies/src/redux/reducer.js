@@ -41,7 +41,7 @@ export const reducer = (state = initstate, action) => {
       
       return {
         ...state,
-        sharesdata:payload["Time Series (Daily)"],
+        sharesdata:payload,
         isLoading: false,
         isError: false,
       };
