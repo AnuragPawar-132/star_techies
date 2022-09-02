@@ -2,6 +2,7 @@ import * as types from "./actionTypes";
 
 const initstate = {
   cryptodata: [],
+  sharesdata:[],
   isLoading: false,
   isError: false,
 };
@@ -29,6 +30,27 @@ export const reducer = (state = initstate, action) => {
         isError: true,
       };
 
+    case types.GET_SHARES_DATA_REQUEST:
+      return {
+        ...state,
+        isLoading: true,
+        isError: false,
+      };
+    case types.GET_SHARES_DATA_SUCCESS:
+      //console.log(payload["Time Series (Daily)"]);
+      
+      return {
+        ...state,
+        sharesdata:payload["Time Series (Daily)"],
+        isLoading: false,
+        isError: false,
+      };
+    case types.GET_SHARES_DATA_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+      };
 
     default:
       return state;

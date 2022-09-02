@@ -6,12 +6,12 @@ import ShareMarket from '../pages/ShareMarket';
 const AllRoutes = () => {
   return (
     <div>
-        <Routes>
-            <Route path="/" element={<Crypto/>} />
-            <Route path="/sharemarket" element={<ShareMarket/>} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Crypto />} />
+        <Route path="/sharemarket" element={<ShareMarket />} />
+      </Routes>
     </div>
-  )
+  );
 }
 
 export default AllRoutes
