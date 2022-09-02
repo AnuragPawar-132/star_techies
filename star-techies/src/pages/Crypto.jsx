@@ -8,7 +8,8 @@ import {
   Th,
   Thead,
   Tr,
-  Flex
+  Flex,
+  Spinner
 } from "@chakra-ui/react";
 import React from "react";
 import { useEffect } from "react";
@@ -23,20 +24,28 @@ const Crypto = () => {
   }, [dispatch]);
 
   const cryptodata = useSelector((store) => store.cryptodata.data);
+  const isLoading= useSelector((store)=>store.isLoading);
+
   console.log(cryptodata);
 
+
+  if(isLoading)
+  {
+    return <Spinner size="xl" margin="100px"/>
+  }
+
   return (
-    <div style={{height:"300px", overflowY:"scroll",margin:"auto",border:"1px solid red"}}>
+    <div style={{   height:"400px", overflowY:"scroll",overflowX:"hidden",margin:"auto",boxShadow:"2px 2px 5px rgba(0,0,0,0.2)"} }>
       
       <Flex  justifyContent="center" padding="20px" minWidth="300px">
-        <TableContainer >
-          <Table variant="striped" colorScheme="teal" border="1px solid black">
-            <TableCaption><h2>Crypto Summary</h2></TableCaption>
-            <Thead>
-              <Tr>
-                <Th>Symbol</Th>
-                <Th>Crypto Name</Th>
-                <Th>Price</Th>
+        <TableContainer border="1px solid gray" size="lg">
+          <Table variant="striped" colorScheme="facebook" boxShadow="2px 2px 10px rgba(0,0,0,0.2)"  size="lg">
+            <TableCaption></TableCaption>
+            <Thead >
+              <Tr >
+                <Th textColor="orange.800" >Symbol</Th>
+                <Th textColor="orange.800">Crypto Name</Th>
+                <Th textColor="orange.800">Price In $</Th>
               </Tr>
             </Thead>
             <Tbody>

@@ -4,7 +4,7 @@
   "author": "Star Techies",
   "version": "1.0.1",
   "icons": {
-    "128": "thumbnail.png"
+    "128": "Stocklogo.png"
   },
   "action": {
     "default_popup": "index.html"
