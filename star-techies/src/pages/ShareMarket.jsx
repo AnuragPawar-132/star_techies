@@ -6,6 +6,7 @@ import companies from "../companydata.json";
 import { Select } from "@chakra-ui/react";
 import { Line } from "react-chartjs-2";
 import {Chart as ChartJS, Title, Tooltip, LineElement, Legend, CategoryScale, LinearScale, PointElement} from "chart.js";
+import RealTimeIndex from "../components/RealTimeIndex";
 
 ChartJS.register(Title, Tooltip, LineElement, Legend, CategoryScale, LinearScale, PointElement);
 
@@ -61,12 +62,16 @@ const ShareMarket = () => {
 
 
   return (
-    <div style={{ overflowY: "scroll", height: "500px" }}>
-      ShareMarket
+    <div style={{  height: "500px",minWidth:"450px" }} >
+      <RealTimeIndex/>
+      
       <Select
         size="md"
         onClick={(e) => handlesymbol(e)}
-        placeholder="Select option"
+        placeholder="Please Select Componay Name"
+        margin="auto"
+        marginTop="5%"
+        width="75%"
       >
         {companies.companies.map((el) => (
           <option value={el.symbol} key={el.id}>
@@ -75,9 +80,9 @@ const ShareMarket = () => {
         ))}
       </Select>
 
-      {chartdata ? <div style={{width:"80%",height:"400px", overflowX:"scroll", overflowY:"scroll"}}> 
+      {chartdata ? <div style={{ display:"flex",width:"90%",height:"400px", overflowY:"scroll",justifyContent:"center",margin:"auto",marginTop:"50px"}}> 
         <Line data={chartdata} />
-      </div> : "Please Select Componay Name"}
+      </div> : ""}
     </div>
   );
 }

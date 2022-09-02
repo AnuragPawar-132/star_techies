@@ -58,13 +58,13 @@ const RealTimeIndex = () => {
 
 
   return (
-    <HStack gap="3%" width="30%" >
+    <HStack gap="4%" width="100%" justifyContent="center">
         <VStack>
-            <Box><Text fontSize='2xl'>Sensex</Text></Box>
+            <Box><Text fontSize='2xl' fontWeight="semibold">Sensex</Text></Box>
             <HStack><Text fontSize='xl'>{myIndex.sensex}</Text> <Text color={myIndex.sensex_color} >{myIndex.value_sensex}</Text><Text color={myIndex.sensex_color} >{myIndex.percent_sensex} %</Text></HStack>
         </VStack>
         <VStack>
-            <Box><Text fontSize='2xl'>Nifty</Text></Box>
+            <Box><Text fontSize='2xl' fontWeight="semibold">Nifty</Text></Box>
             <HStack><Text fontSize='xl'>{myIndex.nifty}</Text> <Text color={myIndex.nifty_color} >{myIndex.value_nifty}</Text><Text color={myIndex.nifty_color} >{myIndex.percent_nifty} %</Text></HStack>
         </VStack>
     </HStack>

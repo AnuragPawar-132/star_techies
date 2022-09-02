@@ -4,7 +4,7 @@ import {
   TableContainer,
   Tbody,
   Td,
-  
+  Avatar,
   Th,
   Thead,
   Tr,
@@ -39,11 +39,12 @@ const Crypto = () => {
       
       <Flex  justifyContent="center" padding="20px" minWidth="300px">
         <TableContainer border="1px solid gray" size="lg">
-          <Table variant="striped" colorScheme="facebook" boxShadow="2px 2px 10px rgba(0,0,0,0.2)"  size="lg">
-            <TableCaption></TableCaption>
+          <Table variant="striped" colorScheme="facebook" boxShadow="2px 2px 10px rgba(0,0,0,0.2)"  size="md" width="50%">
+            
             <Thead >
               <Tr >
                 <Th textColor="orange.800" >Symbol</Th>
+                <Th textColor="orange.800" >Code</Th>
                 <Th textColor="orange.800">Crypto Name</Th>
                 <Th textColor="orange.800">Price In $</Th>
               </Tr>
@@ -51,7 +52,8 @@ const Crypto = () => {
             <Tbody>
               {cryptodata?.length &&
                 cryptodata.map((item) => (
-                  <Tr key={item.id}>
+                  <Tr key={item.id} fontSize="15px" fontWeight="semibold">
+                    <Td><Avatar name={item.name}/></Td>
                     <Td>{item.symbol}</Td>
                     <Td>{item.name}</Td>
                     <Td>{item.quote.USD.price.toFixed(2)}</Td>
